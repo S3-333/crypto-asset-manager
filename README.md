@@ -70,7 +70,7 @@ This project was originally developed as an academic programming assignment. It 
 ---
 
 <details>
-<summary>🇪🇸 Leer en español</summary>
+<summary>🇪🇸 (Leer en español)</summary>
 
 # crypto-asset-manager
 
