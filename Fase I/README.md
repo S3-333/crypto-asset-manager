@@ -1,109 +1,89 @@
-# Crypto-Analytics-Lab01
-### Sistema de Gestión y Análisis de Activos Digitales
+# crypto-asset-manager — Fase I
 
-Proyecto desarrollado como trabajo práctico integrador para la materia de Pensamiento Computacional, Algoritmia y Programación en UADE.
+## 🇪🇸 Versión española
 
----
+La primera iteración del proyecto implementa un gestor de activos digitales con operaciones básicas de alta, baja, modificación e informes. Esta fase define la base funcional del sistema, con validaciones simples y una estructura de consola orientada a la interacción directa del usuario.
 
-## ¿Qué hace este sistema?
+### Qué resuelve esta fase
 
-Crypto-Analytics Lab es una herramienta de consola que permite gestionar una cartera de activos digitales (criptomonedas, ETFs, acciones tecnológicas, etc.). A través de un menú interactivo, el usuario puede registrar nuevos activos, eliminarlos, modificar sus datos y visualizar un informe ordenado.
+El sistema permite registrar activos, mantener una lista de referencia y visualizar un informe ordenado por nivel de confianza. La lógica está diseñada para ser clara y fácil de seguir, con una separación inicial entre la interacción del usuario y la lógica interna del programa.
 
----
+### Funcionalidades principales
 
-## Estructura del proyecto
+- Alta de activos con validación de campos.
+- Baja por identificador con control de unidades en tesorería.
+- Modificación de propiedades registradas.
+- Informe general ordenado por puntaje de confianza.
+- Validación de entradas para evitar estados inconsistentes.
 
-El proyecto está compuesto por tres archivos `.py`:
+### Estructura del proyecto
 
-`main.py` → Punto de entrada del programa. Inicializa la tabla de activos y ejecuta el loop principal del menú.
+- `main.py` — punto de entrada del programa.
+- `funciones.py` — lógica del sistema, dividida en front, back, validaciones y menú.
+- `tabla_original.py` — datos semilla para iniciar el sistema.
 
-`funciones.py` → Contiene toda la lógica del sistema, dividida en cuatro secciones:
-- **Front:** `alta_activo`, `eliminar`, `modificar_activo`, `mostrar_matriz`, `menu_modificar`, `menu_repetidos`
-- **Back:** `busqueda_ticker`, `busqueda_nombre`, `ordenar_matriz`
-- **Validaciones:** `validar_nombre`, `validar_ticker`, `validar_valor`, `validar_volumen`, `validar_metodologia`, `validar_unidades`, `validar_puntaje`, `validar_repetidos`, `validar_opcion_repetidos`, `validar_opcion_modificar`
-- **Menu:** `menu`, `verificacion_menu`
+### Requisitos
 
-`tabla_original.py` → Genera y retorna la tabla inicial con los activos precargados.
+- Python 3.x
+- Sin dependencias externas
 
----
+### Ejecución
 
-## ¿Cómo se ejecuta?
+Desde la carpeta correspondiente:
 
-1. Asegurarse de tener Python instalado (versión 3.x).
-2. Descargar o clonar los tres archivos del proyecto en una misma carpeta.
-3. Abrir una terminal en esa carpeta y ejecutar: `python main.py`
-4. El programa mostrará el menú principal y esperará que el usuario ingrese una opción.
-
----
-
-## Menú principal
-
-```
-==================================================
-  SISTEMA DE GESTIÓN: CRYPTO-ANALYTICS LAB
-==================================================
-1. Registrar nuevo activo (Alta)
-2. Eliminar activo del sistema (Baja)
-3. Modificar valoración o puntaje (Modificación)
-4. Informe General - Visualización de los datos
-8. Salir
-==================================================
+```bash
+python main.py
 ```
 
----
+### Contexto académico
 
-## Datos de cada activo
-
-Cada activo almacena los siguientes datos:
-
- `Nombre` -> Nombre oficial del activo. No puede estar vacío 
-
- `Ticker` -> Símbolo corto del activo (ej: BTC). Debe contener entre 3 y 5 caracteres. No puede estar vacío
-
- `Valor de referencia` -> Precio en USD. Debe ser mayor a 0 
-
- `Volumen 24hs` -> Dinero operado en el último día. No puede ser negativo 
-
- `Metodología` -> Estrategia de operación asignada. Debe ser una de las siguientes opciones: 
- 1. Scalping 
- 2. Day Trading 
- 3. Swing Trading 
- 4. HODL 
-
- `Unidades en tesorería` -> Cantidad del activo en cartera. No puede ser negativo 
-
- `Puntaje de confianza` -> Evaluación interna del activo. Número entero del 1 al 10 
-
- ---
-
-## Funcionalidades
-
-**Alta de activo:** Se ingresan los datos del nuevo activo por teclado. Cada campo se valida con un bucle hasta obtener un valor válido, incluyendo el nombre entre activos. No se permite registrar un activo con el mismo nombre o ticker y misma metodología. Se pueden agregar varios activos seguidos hasta escribir `fin`.
-
-**Baja de activo:** Se busca el activo por su ticker. Solo se pueden eliminar activos con 0 unidades en tesorería. Si hay múltiples activos con el mismo ticker y 0 unidades, se muestra un menú para elegir por metodología. Se pueden eliminar varios activos seguidos hasta escribir `fin`.
-
-**Modificación:** Se busca el activo por nombre. Si el nombre es inválido o no se encuentra, se vuelve a pedir sin salir al menú principal. Si hay múltiples activos con el mismo nombre, se muestra un menú para elegir por metodología. Se selecciona qué campo modificar a través de un submenú; cada campo valida el nuevo valor con un bucle. Al terminar con un activo, se puede buscar otro o escribir `fin` para salir.
-
-**Informe general:** Muestra todos los activos en una tabla formateada, ordenados por puntaje de confianza de mayor a menor. En caso de empate en el puntaje, se ordenan alfabéticamente por nombre.
+Esta fase fue desarrollada en un contexto académico como una primera entrega funcional del proyecto. El README se presenta aquí como una referencia técnica de la arquitectura inicial y la evolución del diseño.
 
 ---
 
-## Submenú de modificación
+<details>
+<summary>🇬🇧 Read in English</summary>
 
-```
-1. Cambiar nombre del activo
-2. Cambiar ticker
-3. Cambiar valor de referencia
-4. Cambiar volumen de actividad
-5. Cambiar metodología de operación
-6. Cambiar unidades en tesorería
-7. Cambiar puntaje de confianza (1-10)
-8. Salir
+# crypto-asset-manager — Phase I
+
+## 🇬🇧 English version
+
+The first iteration of the project implements a digital asset manager with basic create, delete, update, and reporting operations. This phase defines the core functionality of the system, with simple validation rules and a console-driven structure focused on direct user interaction.
+
+### What this phase solves
+
+The system allows users to register assets, maintain a reference list, and generate a report ordered by confidence score. The logic is intentionally straightforward and easy to follow, with an early separation between user interaction and the internal program logic.
+
+### Main features
+
+- Asset creation with field validation.
+- Deletion by identifier with treasury-balance constraints.
+- Modification of stored properties.
+- General report sorted by confidence score.
+- Input validation to prevent inconsistent states.
+
+### Project structure
+
+- `main.py` — application entry point.
+- `funciones.py` — core logic, divided into front-end, back-end, validation, and menu sections.
+- `tabla_original.py` — seed data used to initialize the system.
+
+### Requirements
+
+- Python 3.x
+- No external dependencies
+
+### Run the project
+
+From the relevant folder, execute:
+
+```bash
+python main.py
 ```
 
----
+### Academic context
 
-## Activos precargados
+This phase was developed in an academic setting as the first functional delivery of the project. The README is presented here as a technical reference for the initial architecture and design progression.
 
-El sistema inicia con activos de ejemplo cargados desde `tabla_original.py`, que incluyen criptomonedas (Bitcoin, Ethereum, Solana, XRP, BNB), acciones tecnológicas (Apple, Microsoft, NVIDIA, Tesla, Meta) y ETFs (SPY, QQQ, ARKK, GLD, SLV), entre otros.
+</details>
 
