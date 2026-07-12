@@ -190,19 +190,3 @@ El sistema inicia con datos de ejemplo cargados desde `tablas.py`:
 - **Catálogo (`tabla_catalogo`):** 46 activos disponibles para operar, incluyendo criptomonedas (Bitcoin, Ethereum, Solana, XRP, Cardano, Chainlink, etc.), acciones tecnológicas (Apple, Microsoft, NVIDIA, Tesla, Meta, Adobe, etc.), ETFs (SPY, QQQ, ARKK, GLD, SLV, Vanguard, etc.) y empresas de distintos sectores (salud, energía, finanzas, consumo).
 
 - **Cartera (`tabla_cartera`):** 20 activos en posición, todos presentes también en el catálogo, con sus respectivos tickers y unidades en tesorería.
-
----
-
-## Autores
-
-Proyecto desarrollado por el **Equipo 01** como parte del trabajo práctico de la materia Programación — Primer año.
-
-`Bejarano, Facundo`
-
-`Cabornero, Santiago`
-
-`Lopez Rubio, Federico`
-
-`Mazzitelli, Leandro`
-
-`Oviedo, Luciano`

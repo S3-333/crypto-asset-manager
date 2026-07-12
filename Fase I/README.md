@@ -107,18 +107,3 @@ Cada activo almacena los siguientes datos:
 
 El sistema inicia con activos de ejemplo cargados desde `tabla_original.py`, que incluyen criptomonedas (Bitcoin, Ethereum, Solana, XRP, BNB), acciones tecnológicas (Apple, Microsoft, NVIDIA, Tesla, Meta) y ETFs (SPY, QQQ, ARKK, GLD, SLV), entre otros.
 
----
-
-## Autores
-
-Proyecto desarrollado por el **Equipo 01** como parte del trabajo práctico de la materia Programación — Primer año.
-
-`Bejarano, Facundo`
-
-`Cabornero, Santiago`
-
-`Lopez Rubio, Federico`
-
-`Mazzitelli, Leandro`
-
-`Oviedo, Luciano`
